@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画像ルーレット</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .roulette-container {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    .roulette-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border: 3px solid #444;
+      border-radius: 10px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>画像ルーレット</h1>
+  <div class="roulette-container">
+    <img id="rouletteImage" class="roulette-image" src="img1.jpg" alt="画像">
+  </div>
+  <button onclick="spin()">回す！</button>
+
+  <script>
+    const images = [
+      "img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg",
+      "img6.jpg", "img7.jpg", "img8.jpg", "img9.jpg", "img10.jpg"
+    ];
+
+    function spin() {
+      const index = Math.floor(Math.random() * images.length);
+      document.getElementById(\"rouletteImage\").src = images[index];
+    }
+  </script>
+</body>
+</html>
+
